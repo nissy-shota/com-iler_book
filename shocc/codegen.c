@@ -11,9 +11,6 @@ void gen_val(Node *node) {
 }
 
 void gen(Node *node) {
-    if (node->kind == ND_NUM) {
-        printf("  push %ld\n", node->val);
-        return;
     switch(node->kind) {
         case ND_NUM:
             printf("  push %ld\n", node->val);
