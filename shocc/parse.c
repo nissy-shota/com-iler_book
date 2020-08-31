@@ -80,8 +80,7 @@ static Node *mul();
 static Node *unary();
 static Node *primary();
 
-Node *expr() {
-  return equality();
+
 Node *code[100];
 
 void program() {
