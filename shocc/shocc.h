@@ -34,15 +34,6 @@ bool at_eof();
 bool startswith(char *p, char *q);
 
 typedef enum {
-  ND_ADD, // +
-  ND_SUB, // -
-  ND_MUL, // *
-  ND_DIV, // /
-  ND_EQ,  // ==
-  ND_NE,  // !=
-  ND_LT,  // <
-  ND_LE,  // <=
-  ND_NUM, // Integer
   ND_ADD,     // +
   ND_SUB,     // -
   ND_MUL,     // *
@@ -61,12 +52,10 @@ struct Node {
   NodeKind kind;
   Node *lhs;
   Node *rhs;
-  int val;
   int val;    // kindがND_NUMの場合のみ使う
   int offset; // kindがND_LVARの場合のみ使う
 };
 
-Node *expr(void);
 Node *code[100];
 void program();
 
